@@ -18,3 +18,28 @@ To retrive a value from the hash table, we need to compute the hash code of the 
 Complexity:
 * Time: O(n)
 * Space: O(n)
+
+### Alternative:
+
+We can use balanced binary search trees to store the keys and values. With complexity O(log n), we can find the key in the tree.
+* Using less space than hash table
+* We can itarate through the tree to find the key in order
+
+## ArrayList and Resiable Arrays
+
+* Dynamic resize
+* ArrayList resizes itself while still providing constant time access to the elements O(1)
+* Resizable array is a fixed size array that can grow and shrink
+* When the array is full, it doubles in size O(n)
+
+Complexity:
+* Time: O(1)
+* Space: O(n)
+
+## StringBuilder
+
+* Creates a resizable array of all the strings, copying them back to string only when necessary.
+
+Complexity:
+* Time: O(n)
+* Space: O(n)
