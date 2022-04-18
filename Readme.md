@@ -4,4 +4,4 @@
 
 ## Topics
 
-  [Arrays And Strings](#Notes/ArraysAndStrings.md)
+  [Arrays And Strings](Notes/ArraysAndStrings.md)
