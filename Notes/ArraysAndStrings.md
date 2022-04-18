@@ -19,6 +19,47 @@ Complexity:
 * Time: O(n)
 * Space: O(n)
 
+Sample:
+```c#
+class HashTable {
+    private int arraySize;
+    private LinkedList<KeyValuePair>[] array;
+
+    public HashTable(int arraySize) {
+        this.arraySize = arraySize;
+        array = new LinkedList[arraySize];
+    }
+
+    public void put(int key, int value) {
+        int hashCode = key % arraySize;
+        if (array[hashCode] == null) {
+            array[hashCode] = new LinkedList<KeyValuePair>();
+        }
+        for (KeyValuePair pair : array[hashCode]) {
+            if (pair.key == key) {
+                pair.value = value;
+                return;
+            }
+        }
+        array[hashCode].add(new KeyValuePair(key, value));
+    }
+
+    public int get(int key) {
+        int hashCode = key % arraySize;
+        if (array[hashCode] == null) {
+            return -1;
+        }
+        for (KeyValuePair pair : array[hashCode]) {
+            if (pair.key == key) {
+                return pair.value;
+            }
+        }
+        return -1;
+    }
+}
+```
+
+
 ### Alternative:
 
 We can use balanced binary search trees to store the keys and values. With complexity O(log n), we can find the key in the tree.
@@ -36,6 +77,40 @@ Complexity:
 * Time: O(1)
 * Space: O(n)
 
+Sample:
+```c#
+class  ArrayList {
+    private int size;
+    private int capacity;
+    private int[] array;
+
+    public ArrayList() {
+        size = 0;
+        capacity = 1;
+        array = new int[capacity];
+    }
+
+    public void add(int value) {
+        if (size == capacity) {
+            capacity *= 2;
+            int[] newArray = new int[capacity];
+            for (int i = 0; i < size; i++) {
+                newArray[i] = array[i];
+            }
+            array = newArray;
+        }
+        array[size++] = value;
+    }
+
+    public int get(int index) {
+        if (index < 0 || index >= size) {
+            throw new IndexOutOfBoundsException();
+        }
+        return array[index];
+    }
+}
+```
+
 ## StringBuilder
 
 * Creates a resizable array of all the strings, copying them back to string only when necessary.
@@ -43,3 +118,34 @@ Complexity:
 Complexity:
 * Time: O(n)
 * Space: O(n)
+
+Sample:
+```c#
+class StringBuilder {
+    private int size;
+    private int capacity;
+    private char[] array;
+
+    public StringBuilder() {
+        size = 0;
+        capacity = 1;
+        array = new char[capacity];
+    }
+
+    public void append(char c) {
+        if (size == capacity) {
+            capacity *= 2;
+            char[] newArray = new char[capacity];
+            for (int i = 0; i < size; i++) {
+                newArray[i] = array[i];
+            }
+            array = newArray;
+        }
+        array[size++] = c;
+    }
+
+    public String toString() {
+        return new String(array, 0, size);
+    }
+}
+```
