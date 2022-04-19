@@ -1,7 +1,16 @@
 # Linked List
 
+### Notes
+
 * The benefit of a linked list is that it can add and remove items from the begining of the list in constant time.
 * A linked list does not provide constant time access to the elements.
+
+### The Runner Technique
+* Means that you iterate through the list and keep track of the previous node.
+
+### Recursive Problem Solving
+
+* If you are having trouble solving a linked list problem, you may want to look at the recursive solution.
 
 Sample:
 ```c#
