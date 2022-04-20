@@ -7,3 +7,5 @@ This repo contains notes from the book [Cracking the Code Interview](https://www
 ## Topics
 
   * [Arrays And Strings](Notes/ArraysAndStrings.md)
+
+  * [Linked List](Notes/LinkedList.md)
