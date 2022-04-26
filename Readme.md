@@ -6,7 +6,7 @@ This repo contains notes from the book [Cracking the Code Interview](https://www
 
 ## Topics
 
-  * [Hash Tables](Notes/Hashtable.md)
+  * [Hash Tables](Notes/HashTables.md)
 
   * [Arrays And Strings](Notes/ArraysAndStrings.md)
 
